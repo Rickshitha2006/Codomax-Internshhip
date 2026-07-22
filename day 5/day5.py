@@ -1,12 +1,17 @@
 import pandas as pd
 
-df = pd.read_csv("pos_tags.csv")
+df = pd.read_csv("StudentsPerformance.csv")
 
-print("5 Rows of the table")
 print(df.head())
-
-print("information the table")
+print("Dataset Information")
 print(df.info())
-
-print("Columns of the table")
+print(df.shape)
 print(df.columns)
+
+print("Checking Missing Values")
+print(df.isnull().sum())
+
+print("Remove missing vlaues")
+df = df.dropna()
+
+print(df.isnull().sum())
